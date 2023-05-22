@@ -11,6 +11,12 @@
           Dashboard
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{route("admin.projects.index")}}" class="nav-link" aria-current="page">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+          Projects
+        </a>
+      </li>
       <li>
     </ul>
 
