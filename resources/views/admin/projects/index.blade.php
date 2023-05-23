@@ -19,9 +19,16 @@
         <th scope="row">{{$project->title}}</th>
         {{-- <td>{{$project->content}}</td> --}}
         <td>{{$project->slug}}</td>
-        <td>
-            <a href="{{route("admin.projects.show", ["project" => $project->slug])}}" type="button" class="btn btn-primary">Vedi</a>
-            <a href="{{route("admin.projects.edit", ["project" => $project->slug])}}" type="button" class="btn btn-warning">Modifica</a>
+        <td class="d-flex">
+            <a href="{{route("admin.projects.show", ["project" => $project->slug])}}" type="button" class="btn btn-primary m-1">Vedi</a>
+            <a href="{{route("admin.projects.edit", ["project" => $project->slug])}}" type="button" class="btn btn-warning m-1">Modifica</a>
+
+            <form class="form_delete_post" action="{{route('admin.projects.destroy', ['project' => $project->slug])}}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger m-1">Elimina</button>
+            </form>
+
         </td>
       </tr>
       @endforeach
