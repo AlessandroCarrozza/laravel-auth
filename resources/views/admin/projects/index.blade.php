@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section("content")
+<a href="{{route("admin.projects.create")}}" type="button" class="btn btn-primary">Crea nuovo project</a>
 <table class="table">
     <thead>
       <tr>
@@ -20,6 +21,7 @@
         <td>{{$project->slug}}</td>
         <td>
             <a href="{{route("admin.projects.show", ["project" => $project->slug])}}" type="button" class="btn btn-primary">Vedi</a>
+            <a href="{{route("admin.projects.edit", ["project" => $project->slug])}}" type="button" class="btn btn-warning">Modifica</a>
         </td>
       </tr>
       @endforeach
